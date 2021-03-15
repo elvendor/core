@@ -22,12 +22,15 @@
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "husky": "^4.2.5",
-    "prettier": "2.0.2"
+    "prettier": "2.0.2",
+    "webpack-bundle-analyzer": "^4.4.0"
   },
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
+    "analyze": "cross-env ANALYZER=true npm run build",
     "format": "prettier --write src",
     "format-check": "prettier --check src"
   },

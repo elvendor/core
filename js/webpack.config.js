@@ -1,15 +1,20 @@
 const config = require('flarum-webpack-config');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const merge = require('webpack-merge');
+
+const useBundleAnalyzer = process.env.ANALYZER === 'true';
 
 module.exports = merge(config(), {
   output: {
-    library: 'flarum.core'
+    library: 'flarum.core',
   },
 
   // temporary TS configuration
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
+
+  plugins: [useBundleAnalyzer && new BundleAnalyzerPlugin()],
 });
 
 module.exports['module'].rules[0].test = /\.(tsx?|js)$/;
