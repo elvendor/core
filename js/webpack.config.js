@@ -4,6 +4,12 @@ const merge = require('webpack-merge');
 
 const useBundleAnalyzer = process.env.ANALYZER === 'true';
 
+const plugins = [];
+
+if (useBundleAnalyzer) {
+  plugins.push(new BundleAnalyzerPlugin());
+}
+
 module.exports = merge(config(), {
   output: {
     library: 'flarum.core',
@@ -14,7 +20,7 @@ module.exports = merge(config(), {
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },
 
-  plugins: [useBundleAnalyzer && new BundleAnalyzerPlugin()],
+  plugins,
 });
 
 module.exports['module'].rules[0].test = /\.(tsx?|js)$/;
