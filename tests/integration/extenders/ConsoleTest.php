@@ -43,6 +43,7 @@ class ConsoleTest extends ConsoleTestCase
 
         $this->assertEquals('Custom Command.', $this->runCommand($input));
     }
+
     /**
      * @test
      */
