@@ -8,6 +8,7 @@
  */
 
 use Illuminate\Container\Container;
+use Illuminate\Contracts\Config\Repository;
 
 if (! function_exists('resolve')) {
     /**
@@ -57,3 +58,13 @@ if (! function_exists('event')) {
         return app('events')->dispatch($event, $payload, $halt);
     }
 }
+
+if (! function_exists('config')) {
+    /**
+     * @deprecated do not use, will be transferred to flarum/laravel-helpers.
+     */
+    function config(string $key, $default = null) {
+        return resolve(Repository::class)->get($key, $default);
+    }
+}
+

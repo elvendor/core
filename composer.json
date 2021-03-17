@@ -26,6 +26,7 @@
         "dflydev/fig-cookies": "^3.0.0",
         "doctrine/dbal": "^2.7",
         "dragonmantank/cron-expression": "^3.1.0",
+        "flarum/laravel-helpers": "^0.1.0",
         "franzl/whoops-middleware": "^2.0.0",
         "illuminate/bus": "^8.0",
         "illuminate/cache": "^8.0",
