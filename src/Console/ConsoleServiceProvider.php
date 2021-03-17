@@ -15,7 +15,7 @@ use Flarum\Foundation\AbstractServiceProvider;
 use Flarum\Foundation\Console\CacheClearCommand;
 use Flarum\Foundation\Console\InfoCommand;
 
-class ConsoleServiceProvider extends AbstractServiceProvider
+final class ConsoleServiceProvider extends AbstractServiceProvider
 {
     /**
      * {@inheritdoc}
