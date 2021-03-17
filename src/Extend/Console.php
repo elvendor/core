@@ -62,6 +62,5 @@ class Console implements ExtenderInterface
         $container->extend('flarum.console.scheduled', function ($existingScheduled) {
             return array_merge($existingScheduled, $this->scheduled);
         });
-
     }
 }

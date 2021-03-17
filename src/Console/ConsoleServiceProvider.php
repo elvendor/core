@@ -27,7 +27,9 @@ class ConsoleServiceProvider extends AbstractServiceProvider
     {
         // Used by Laravel to proxy artisan commands to its binary.
         // Flarum uses a similar binary, but it's called flarum.
-        if (!defined('ARTISAN_BINARY')) define('ARTISAN_BINARY', 'flarum');
+        if (! defined('ARTISAN_BINARY')) {
+            define('ARTISAN_BINARY', 'flarum');
+        }
 
         $this->container->singleton(LaravelSchedule::class, function () {
             return $this->container->make(Schedule::class);
@@ -44,7 +46,7 @@ class ConsoleServiceProvider extends AbstractServiceProvider
             ];
         });
 
-        $this->container->singleton('flarum.console.scheduled', function() {
+        $this->container->singleton('flarum.console.scheduled', function () {
             return [];
         });
     }
